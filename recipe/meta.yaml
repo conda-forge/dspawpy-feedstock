@@ -1,5 +1,5 @@
 {% set name = "dspawpy" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 052c3af427574e3124452797de318abc179f503fb3ac98b084653ecfaddddc56
+  sha256: 01f77a51c862327c1635a2010ca125536a4a76c59aafc4920917d78fc7b55837
 
 build:
   number: 0
@@ -17,11 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.6, <3.12
   run:
     - h5py >=3.7
     - pymatgen >=2021.2.8.1
-    - python >=3.6
+    - python >=3.6, <3.12
     - statsmodels >=0.12.0
 
 test:
