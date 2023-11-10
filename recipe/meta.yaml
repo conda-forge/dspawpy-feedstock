@@ -17,11 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.6, <3.12
   run:
     - h5py >=3.7
     - pymatgen >=2021.2.8.1
-    - python >=3.6
+    - python >=3.6, <3.12
     - statsmodels >=0.12.0
 
 test:
