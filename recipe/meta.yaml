@@ -1,5 +1,5 @@
 {% set name = "dspawpy" %}
-{% set version = "1.1.5" %}
+{% set version = "1.1.6" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 598cb07faaca319d55d8d6219246591318edabb9309928c0e70ea94afa9a75af
+  sha256: 54d5d9c179f8d08559e140c982ba3c2104c1d358fd93832db9776119ea146aea
 
 build:
   number: 0
