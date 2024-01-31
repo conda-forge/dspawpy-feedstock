@@ -1,5 +1,5 @@
 {% set name = "dspawpy" %}
-{% set version = "1.1.6" %}
+{% set version = "1.1.7" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,22 +7,25 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 54d5d9c179f8d08559e140c982ba3c2104c1d358fd93832db9776119ea146aea
+  sha256: 6bece0292ffedfafa65b91f93815a87a9c7d876ecf562dd0c66466f1786198e3
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  entry_points:
+    - cli=dspawpy.cli.cli:main
+    - ecli=dspawpy.cli.cli_en:main
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
+    - python >=3.6
     - pip
-    - python >=3.6
   run:
-    - h5py >=3.7
-    - pymatgen >=2021.2.8.1
     - python >=3.6
-    - statsmodels >=0.12.0
+    - pymatgen
+    - statsmodels
+    - h5py
     - prompt_toolkit
     - loguru
 
@@ -32,6 +35,12 @@ test:
     - dspawpy.analysis
     - dspawpy.diffusion
     - dspawpy.io
+  commands:
+    - pip check
+    - cli --help
+    - ecli --help
+  requires:
+    - pip
 
 about:
   home: "http://www.hzwtech.com/"
