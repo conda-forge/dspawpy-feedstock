@@ -12,22 +12,23 @@ source:
 build:
   entry_points:
     - cli=dspawpy.cli.cli:main
-    - ecli=dspawpy.cli.cli_en:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - pymatgen
     - statsmodels
     - h5py
     - prompt_toolkit
     - loguru
+    - polars
+    - ruamel.yaml
 
 test:
   imports:
@@ -38,7 +39,6 @@ test:
   commands:
     - pip check
     - cli --help
-    - ecli --help
   requires:
     - pip
 
