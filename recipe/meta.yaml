@@ -33,9 +33,6 @@ requirements:
 test:
   imports:
     - dspawpy
-    - dspawpy.analysis
-    - dspawpy.diffusion
-    - dspawpy.io
   commands:
     - pip check
     - cli --help
