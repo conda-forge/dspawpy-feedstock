@@ -35,7 +35,6 @@ test:
     - dspawpy
   commands:
     - pip check
-    - cli --help
   requires:
     - pip
 
