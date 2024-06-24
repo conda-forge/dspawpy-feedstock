@@ -33,8 +33,13 @@ requirements:
 test:
   imports:
     - dspawpy
+    - dspawpy.analysis
+    - dspawpy.cli
+    - dspawpy.diffusion
+    - dspawpy.io
   commands:
     - pip check
+    - cli --help
   requires:
     - pip
 
