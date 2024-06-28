@@ -13,7 +13,7 @@ build:
   entry_points:
     - cli=dspawpy.cli.cli:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
@@ -21,7 +21,6 @@ requirements:
     - python >=3.8
     - pip
     - hatchling
-    - better_exceptions
   run:
     - python >=3.8
     - pymatgen
@@ -30,7 +29,6 @@ requirements:
     - prompt_toolkit
     - loguru
     - polars
-    - ruamel.yaml
 
 test:
   imports:
