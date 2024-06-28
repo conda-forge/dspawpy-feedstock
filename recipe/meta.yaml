@@ -23,12 +23,6 @@ requirements:
     - hatchling
   run:
     - python >=3.8
-    - pymatgen
-    - statsmodels
-    - h5py
-    - prompt_toolkit
-    - loguru
-    - polars
 
 test:
   imports:
