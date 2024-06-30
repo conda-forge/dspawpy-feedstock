@@ -29,6 +29,8 @@ requirements:
     - prompt_toolkit
     - loguru
     - polars
+    - build
+    - hatchling
 
 test:
   imports:
