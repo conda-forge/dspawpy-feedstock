@@ -1,5 +1,5 @@
 {% set name = "dspawpy" %}
-{% set version = "1.4.1" %}
+{% set version = "1.5.3" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 597b28565e2c01612c1b56b47c7662d8f38bd7399d6592a44d055a2c7c0fbab4
+  sha256: a361d68e11a6197a8a7069dcc8c99a6a60d111cd4396e96ef55cdc88f08bc95b
 
 build:
   entry_points:
@@ -20,6 +20,7 @@ requirements:
   host:
     - python >=3.8
     - pip
+    - hatchling
   run:
     - python >=3.8
     - pymatgen
@@ -28,7 +29,8 @@ requirements:
     - prompt_toolkit
     - loguru
     - polars
-    - ruamel.yaml
+    - build
+    - hatchling
 
 test:
   imports:
