@@ -11,7 +11,7 @@ source:
 
 build:
   entry_points:
-    - cli=dspawpy.cli.cli:main
+    - dspawpy=dspawpy.cli.entrypoint:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -41,7 +41,7 @@ test:
     - dspawpy.io
   commands:
     - pip check
-    - cli --help
+    - dspawpy --help
   requires:
     - pip
 
