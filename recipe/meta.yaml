@@ -31,6 +31,8 @@ requirements:
     - polars
     - python-build
     - hatchling
+    - h5glance
+    - tables
 
 test:
   imports:
@@ -57,4 +59,4 @@ about:
 extra:
   recipe-maintainers:
     - bernt-matthias
-    - m3lab-zzl
+    - DeeliN221
