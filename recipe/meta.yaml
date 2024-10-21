@@ -32,7 +32,7 @@ requirements:
     - python-build
     - hatchling
     - h5glance
-    - tables
+    - pytables
 
 test:
   imports:
