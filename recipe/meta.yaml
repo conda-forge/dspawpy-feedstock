@@ -14,15 +14,15 @@ build:
     - dspawpy=dspawpy.cli.entrypoint:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - hatchling
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pymatgen
     - statsmodels
     - h5py
@@ -46,6 +46,7 @@ test:
     - dspawpy --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: "http://www.hzwtech.com/"
