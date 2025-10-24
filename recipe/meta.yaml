@@ -1,5 +1,5 @@
 {% set name = "dspawpy" %}
-{% set version = "1.8.1" %}
+{% set version = "1.8.3" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 981669d54a3c0a03cb185de6e984ea8f7adc2d0667ac10d1256aa4069d8237f1
+  sha256: a8c2adbe5ab41ae7857d3770370a4c9c0560f7b9d24f4342af0ac52bd979006d
 
 build:
   entry_points:
