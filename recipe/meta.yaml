@@ -1,27 +1,28 @@
 {% set name = "dspawpy" %}
 {% set version = "1.8.4" %}
+
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  url: "https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
   sha256: f1381266c63e77caf1523daf49cd4346b77a2e797de2fb5937f00935bd2cb4ca
 
 build:
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  skip: true
   entry_points:
     - dspawpy=dspawpy.cli.entrypoint:main
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
 
 requirements:
   host:
-    - python >=3.9  # 注意：pyproject.toml 里是 >=3.9，不是 3.8
+    - python
     - pip
     - hatchling
   run:
-    - python >=3.9
+    - python
     - pymatgen
     - statsmodels
     - h5py
@@ -29,7 +30,7 @@ requirements:
     - loguru
     - polars >=0.18
     - h5glance
-    - pytables  # 这是 conda 中 'tables' 的包名
+    - pytables
     - numpy <2
     - ase
 
@@ -47,14 +48,16 @@ test:
     - pip
 
 about:
-  home: "http://www.hzwtech.com/"
+  home: http://www.hzwtech.com/
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: "Tools for dspaw"
+  summary: Tools for dspaw
   doc_url: http://hzwtech.com/Device%20Studio/DS-PAW/build/html/tools.html
+  dev_url: http://hzwtech.com/Device%20Studio/DS-PAW/build/html/dspawpy/latest/dspawpy.html
 
 extra:
   recipe-maintainers:
     - bernt-matthias
     - DeeliN221
+    - HZWzzl
