@@ -20,7 +20,7 @@ requirements:
   host:
     - python >=3.9,<3.13
     - pip
-    - uv
+    - uv-build >=0.9.8,<0.10
   run:
     - python >=3.9,<3.13
     - pymatgen
